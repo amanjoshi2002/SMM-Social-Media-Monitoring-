@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Scraper Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="back-arrow" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+    <nav class="navbar">
+        <div class="logo">Social<span style="color: green;"class="logo-text">Media Monitor</span></div>
+        <div class="navbar-right">
+            <div class="notification-dropdown">
+                <i class="fas fa-bell notification-icon"></i>
+                <div id="notificationDropdown" class="dropdown-content">
+                    <div class="notification-section">
+                        <h3>Twitter</h3>
+                        <div class="platform-dropdown">
+                            <a href="#" onclick="handleNotification('Twitter', 'Option 1')">Twitter Option 1</a>
+                            <a href="#" onclick="handleNotification('Twitter', 'Option 2')">Twitter Option 2</a>
+                            <a href="#" onclick="handleNotification('Twitter', 'Option 3')">Twitter Option 3</a>
+                        </div>
+                    </div>
+                    <div class="notification-section">
+                        <h3>Meta</h3>
+                        <div class="platform-dropdown">
+                            <a href="#" onclick="handleNotification('Meta', 'Option 1')">Meta Option 1</a>
+                            <a href="#" onclick="handleNotification('Meta', 'Option 2')">Meta Option 2</a>
+                            <a href="#" onclick="handleNotification('Meta', 'Option 3')">Meta Option 3</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-dropdown">
+                <button class="settings-btn" onclick="toggleDropdown()"><i class="fas fa-cog"></i></button>
+                <div id="settingsDropdown" class="dropdown-content">
+                    <a href="#" onclick="showPlatformModal('Twitter')">X</a>
+                    <a href="#" onclick="showPlatformModal('Meta')">Meta</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="main-content">
+        <div class="left-panel">
+            <div class="platform-buttons">
+                <button class="platform-btn" data-platform="Twitter" onclick="fetchPlatformData('twitter')"><i class="fab fa-twitter"></i> Twitter</button>
+                <button class="platform-btn" data-platform="Facebook" onclick="fetchPlatformData('facebook')"><i class="fab fa-facebook"></i> Facebook</button>
+                <button class="platform-btn" data-platform="Instagram" onclick="fetchPlatformData('instagram')"><i class="fab fa-instagram"></i> Instagram</button>
+            </div>
+            <button class="side-panel-button hashtag-help-button" onclick="showHashtagHelp()">
+                <i class="fas fa-question-circle"></i> Hashtag Help
+            </button>
+            <button class="side-panel-button origin-track-button" onclick="showOriginTrack()">
+                <i class="fas fa-map-marker-alt"></i> Origin Track
+            </button>
+            <div class="search-profile-container">
+                <button class="side-panel-button search-profile-button" onclick="toggleProfileDropdown()">
+                    <i class="fas fa-user-circle profile-icon"></i> By Profile
+                </button>
+              
+                <div id="profileDropdown" class="profile-dropdown">
+                    <a href="#" onclick="searchProfile('Twitter')">X Profile</a>
+                    <a href="#" onclick="searchProfile('Facebook')">Facebook Profile</a>
+                    <a href="#" onclick="searchProfile('Instagram')">Instagram Profile</a>
+                </div>
+            </div>
+            <button id="controlButton" class="control-button" onclick="toggleScraping()">
+                <i class="fas fa-play"></i> Start
+            </button>
+        </div>
+        <div class="dashboard-content">
+            <h1 id="platformTitle">Dashboard</h1>
+            <div id="loadingIndicator" style="display: none;">Loading data...</div>
+            <div id="dashboardData">
+                <div class="filter-section">
+                    <select id="hashtagSelect">
+                        <option value="">Select a hashtag</option>
+                        <option value="crime">Crime</option>
+                        <option value="rumors">Rumors</option>
+                        <option value="illegal">Illegal</option>
+                        <option value="underwater">Underwater</option>
+                        <option value="viral">Viral</option>
+                    </select>
+                    <button class="filter-button" onclick="applyFilter()">Apply Filter</button>
+                    <button class="export-button" onclick="exportToJson()">
+                        <i class="fas fa-file-export"></i> Export to JSON
+                    </button>
+                    <button class="filter-button" onclick="filterUrlsOnly()">Show URLs Only</button>
+                </div>
+                
+                <div id="filteredResults"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="platformModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePlatformModal()">&times;</span>
+            <i id="platformIcon" class="platform-icon"></i>
+            <input type="text" id="platformUrl" placeholder="Enter username">
+            <button class="submit-btn" onclick="submitPlatformUrl()">Submit</button>
+        </div>
+    </div>
+
+    <!-- Add this modal div at the end of the body, next to the existing platformModal -->
+    <div id="profileSearchModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProfileSearchModal()">&times;</span>
+            <i id="profileSearchIcon" class="platform-icon"></i>
+            <input type="text" id="profileSearchInput" placeholder="Enter username">
+            <button class="submit-btn" onclick="submitProfileSearch()">Search</button>
+        </div>
+    </div>
+
+    <div id="originTrackOutput" style="display: none;">
+        <img src="img/1.jpg" alt="Static Photo" id="staticPhoto">
+        <div id="originTrackData"></div>
+    </div>
+
+    <footer>
+        <img src="./img/logo.png" alt="Logo" class="footer-logo">
+        <p>&copy; 2023 Goa Police. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        function goBack() {
+            ipcRenderer.send('navigate-back');
+        }
+
+        let currentPlatform = '';
+        let apiUrl = '';
+        let currentData = [];
+        let isScrapingActive = false;
+
+        function filterByHashtag(data, hashtag) {
+            return data.filter(item => {
+                if (item.hashtags && Array.isArray(item.hashtags)) {
+                    return item.hashtags.some(tag => tag.toLowerCase() === hashtag.toLowerCase());
+                }
+                return false;
+            });
+        }
+
+        function updateDashboard(filteredData) {
+            const resultsContainer = document.getElementById('filteredResults');
+            resultsContainer.innerHTML = '<h2>Filtered Results</h2>';
+
+            if (filteredData.length === 0) {
+                resultsContainer.innerHTML += '<p>No results found.</p>';
+                return;
+            }
+
+            filteredData.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'post';
+                postElement.innerHTML = `
+                    <h3>${post.authorMeta.name}</h3>
+                    <p>${post.text}</p>
+                    <img src="${post.thumbnailUrl}" alt="Post thumbnail">
+                    <p>Likes: ${post.likesCount}</p>
+                    <p>Comments: ${post.commentsCount}</p>
+                `;
+                resultsContainer.appendChild(postElement);
+            });
+        }
+
+        function applyFilter() {
+            const selectedHashtag = document.getElementById('hashtagSelect').value;
+            let filteredResults;
+            if (selectedHashtag) {
+                filteredResults = filterByHashtag(currentData, selectedHashtag);
+            } else {
+                filteredResults = currentData;
+            }
+            updateDashboard(filteredResults);
+        }
+
+        function filterUrlsOnly() {
+            const selectedHashtag = document.getElementById('hashtagSelect').value;
+            let filteredResults;
+            if (selectedHashtag) {
+                filteredResults = filterByHashtag(currentData, selectedHashtag);
+            } else {
+                filteredResults = currentData;
+            }
+            const urlsOnly = filteredResults.map(post => post.postUrl);
+            const resultsContainer = document.getElementById('filteredResults');
+            resultsContainer.innerHTML = '<h2>Filtered URLs</h2>';
+            urlsOnly.forEach(url => {
+                const urlElement = document.createElement('p');
+                urlElement.textContent = url;
+                resultsContainer.appendChild(urlElement);
+            });
+        }
+
+        function exportToJson() {
+            const dataStr = JSON.stringify(currentData, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+
+            const exportFileDefaultName = 'filtered_data.json';
+
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        }
+
+        function fetchPlatformData(platform) {
+            currentPlatform = platform;
+            document.getElementById('platformTitle').textContent = currentPlatform.charAt(0).toUpperCase() + currentPlatform.slice(1) + ' Dashboard';
+            document.getElementById('loadingIndicator').style.display = 'block';
+            document.getElementById('dashboardData').style.display = 'none';
+
+            let url = '';
+            if (platform === 'twitter') {
+                url = 'http://localhost:5001/twitter_data';
+            } else if (platform === 'facebook') {
+                url = 'http://localhost:5001/meta_data';
+            } else if (platform === 'instagram') {
+                url = 'http://localhost:5001/meta_data';
+            }
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(`${platform.charAt(0).toUpperCase() + platform.slice(1)} Data:`, data);
+                    if (platform === 'facebook' || platform === 'instagram') {
+                        currentData = data.filter(item => item.fromSocial === platform);
+                    } else {
+                        currentData = data;
+                    }
+                    updateDashboard(currentData); // Update the dashboard with the data
+                    document.getElementById('loadingIndicator').style.display = 'none';
+                    document.getElementById('dashboardData').style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('loadingIndicator').style.display = 'none';
+                });
+        }
+
+        function toggleDropdown() {
+            document.getElementById("settingsDropdown").classList.toggle("show");
+        }
+
+        function showPlatformModal(platform) {
+            const modal = document.getElementById("platformModal");
+            const icon = document.getElementById("platformIcon");
+            const urlInput = document.getElementById("platformUrl");
+            
+            if (platform === "Twitter") {
+                icon.className = "fab fa-twitter platform-icon";
+                urlInput.placeholder = "Enter #hashtag";
+            } else if (platform === "Meta") {
+                icon.className = "fab fa-facebook platform-icon";
+                urlInput.placeholder = "Enter #hashtag";
+            }
+            
+            modal.style.display = "block";
+        }
+
+        function closePlatformModal() {
+            document.getElementById("platformModal").style.display = "none";
+        }
+
+        function submitPlatformUrl() {
+            const url = document.getElementById("platformUrl").value;
+            console.log("Submitted URL:", url);
+            // Here you can add logic to handle the submitted URL
+            closePlatformModal();
+        }
+
+        function showHashtagHelp() {
+            window.location.href = 'hashtag_help.html';
+        }
+
+        function showOriginTrack() {
+            document.getElementById('originTrackOutput').style.display = 'block';
+            fetchOriginTrackData();
+        }
+
+        async function fetchOriginTrackData() {
+            const response = await fetch('http://localhost:5000/start-identify', {
+                method: 'POST'
+            });
+
+            if (response.ok) {
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let result = '';
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    result += decoder.decode(value);
+                }
+
+                displayOriginTrackData(result);
+            } else {
+                console.error('Error fetching origin track data:', response.statusText);
+            }
+        }
+
+        function displayOriginTrackData(data) {
+            const originTrackData = document.getElementById('originTrackData');
+            originTrackData.innerHTML = `<p>${data}</p>`;
+        }
+
+        function showOriginTrack() {
+            window.location.href = 'origin_track.html';
+        }
+
+        function displayOriginTrackData(data) {
+            const originTrackData = document.getElementById('originTrackData');
+            originTrackData.innerHTML = `<p>${data}</p>`;
+        }
+
+        function searchByProfile() {
+            console.log("Searching by profile...");
+            alert("Search by Profile: This feature allows you to search for specific user profiles and analyze their posts.");
+        }
+
+        function toggleProfileDropdown() {
+            document.getElementById("profileDropdown").classList.toggle("show");
+        }
+
+        function searchProfile(platform) {
+            const modal = document.getElementById("profileSearchModal");
+            const icon = document.getElementById("profileSearchIcon");
+            const input = document.getElementById("profileSearchInput");
+            
+            if (platform === "Twitter") {
+                icon.className = "fab fa-twitter platform-icon";
+                input.placeholder = "Enter Twitter username";
+            } else if (platform === "Facebook") {
+                icon.className = "fab fa-facebook platform-icon";
+                input.placeholder = "Enter Facebook username";
+            } else if (platform === "Instagram") {
+                icon.className = "fab fa-instagram platform-icon";
+                input.placeholder = "Enter Instagram username";
+            }
+            
+            modal.style.display = "block";
+            input.focus(); // Automatically focus the input field
+            document.getElementById("profileDropdown").classList.remove("show");
+        }
+
+        function closeProfileSearchModal() {
+            document.getElementById("profileSearchModal").style.display = "none";
+        }
+
+        async function scrapeProfile(platform, username) {
+            let url = '';
+            if (platform === 'Twitter') {
+                url = 'http://localhost:5001/scrape_twitter';
+            } else if (platform === 'Instagram') {
+                url = 'http://localhost:5001/scrape_instagram';
+            }
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username: username, num_posts: 10 })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log(`${platform} data:`, data);
+                exportToJson(data, platform, username);
+            } else {
+                console.error('Error scraping profile:', response.statusText);
+            }
+        }
+
+        function exportToJson(data, platform, username) {
+            const dataStr = JSON.stringify(data, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+
+            const exportFileDefaultName = `${platform}_Profile_Data_${username}.json`;
+
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        }
+
+        function submitProfileSearch() {
+            const username = document.getElementById("profileSearchInput").value;
+            const platform = document.getElementById("profileSearchIcon").classList.contains('fa-twitter') ? 'Twitter' : 'Instagram';
+            console.log("Searching profile:", username);
+            scrapeProfile(platform, username);
+            closeProfileSearchModal();
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.search-profile-button') && !event.target.matches('.settings-btn')) {
+                var dropdowns = document.getElementsByClassName("profile-dropdown");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+                
+                var settingsDropdown = document.getElementById("settingsDropdown");
+                if (settingsDropdown.classList.contains('show')) {
+                    settingsDropdown.classList.remove('show');
+                }
+            }
+            
+            if (event.target == document.getElementById("platformModal")) {
+                closePlatformModal();
+            }
+            
+            if (event.target == document.getElementById("profileSearchModal")) {
+                closeProfileSearchModal();
+            }
+        }
+    </script>
+</body>
+</html>

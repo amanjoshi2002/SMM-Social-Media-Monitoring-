@@ -1,0 +1,523 @@
+2024-09-29 11:36:09,819 - INFO - Starting data collector application
+2024-09-29 11:36:09,819 - INFO - Starting periodic merge...
+2024-09-29 11:36:09,819 - INFO - Periodic merge thread started
+2024-09-29 11:36:09,819 - INFO - Initializing sentiment analysis...
+2024-09-29 11:36:09,819 - INFO - Sentiment analysis initialization thread started
+2024-09-29 11:36:09,871 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 11:36:09,919 - INFO - Merged 238 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 11:36:09,919 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 11:36:09,934 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 11:36:09,945 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 11:36:11,570 - INFO - Sentiment analysis initialized.
+2024-09-29 11:38:29,346 - INFO - Starting data collector application
+2024-09-29 11:38:29,346 - INFO - Starting periodic merge...
+2024-09-29 11:38:29,346 - INFO - Periodic merge thread started
+2024-09-29 11:38:29,352 - INFO - Initializing sentiment analysis...
+2024-09-29 11:38:29,352 - INFO - Sentiment analysis initialization thread started
+2024-09-29 11:38:29,394 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 11:38:29,459 - INFO - Merged 238 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 11:38:29,459 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 11:38:29,468 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 11:38:29,468 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 11:38:30,531 - INFO - Sentiment analysis initialized.
+2024-09-29 11:39:29,462 - INFO - Starting periodic merge...
+2024-09-29 11:39:29,592 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:39:30,155 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:39:30,202 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:39:30,673 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:39:30,718 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:39:31,180 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:39:31,230 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:39:31,630 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:39:31,685 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:39:32,095 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:39:32,095 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 11:39:32,142 - INFO - Merged 238 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 11:39:32,142 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 11:40:32,157 - INFO - Starting periodic merge...
+2024-09-29 11:40:32,196 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:40:33,435 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:40:33,482 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:40:34,662 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:40:34,711 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:40:35,729 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:40:35,781 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:40:36,942 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:40:37,009 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:40:38,253 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:40:38,253 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 11:40:38,299 - INFO - Merged 238 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 11:40:38,300 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 11:41:38,301 - INFO - Starting periodic merge...
+2024-09-29 11:41:38,352 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:41:38,977 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:41:39,017 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:41:39,585 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:41:39,633 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:41:40,513 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:41:40,555 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:41:41,024 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:41:41,085 - WARNING - Alert triggered for Twitter post: 
+2024-09-29 11:41:41,638 - INFO - SMS alert sent for Twitter post: 
+2024-09-29 11:41:41,640 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 11:41:41,968 - WARNING - Alert triggered for Meta post: 
+2024-09-29 11:41:42,456 - INFO - SMS alert sent for Meta post: 
+2024-09-29 11:41:42,836 - WARNING - Alert triggered for Meta post: 
+2024-09-29 11:41:43,269 - INFO - SMS alert sent for Meta post: 
+2024-09-29 11:46:33,381 - INFO - Starting data collector application
+2024-09-29 11:46:33,381 - INFO - Starting periodic merge...
+2024-09-29 11:46:33,381 - INFO - Periodic merge thread started
+2024-09-29 11:46:33,381 - INFO - Initializing sentiment analysis...
+2024-09-29 11:46:33,381 - INFO - Sentiment analysis initialization thread started
+2024-09-29 11:46:33,458 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 11:46:33,458 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 11:46:33,458 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 11:46:33,504 - WARNING - Alert triggered for Meta post: https://example.com/post/UzpfSTEwMDA3NzI2MzE2NTAzODo1NTIyOTQzMzA2ODkzMzQ6NTUyMjk0MzMwNjg5MzM0
+2024-09-29 11:46:34,392 - INFO - Sentiment analysis initialized.
+2024-09-29 11:46:34,799 - INFO - SMS alert sent for Meta post: https://example.com/post/UzpfSTEwMDA3NzI2MzE2NTAzODo1NTIyOTQzMzA2ODkzMzQ6NTUyMjk0MzMwNjg5MzM0
+2024-09-29 11:46:34,962 - WARNING - Alert triggered for Meta post: https://example.com/post/UzpfSTEwMDA2NDQyMjcxMDUwMTo5NjQ3Mjg3MTkwMTc4NzY6OTY0NzI4NzE5MDE3ODc2
+2024-09-29 11:46:36,031 - INFO - SMS alert sent for Meta post: https://example.com/post/UzpfSTEwMDA2NDQyMjcxMDUwMTo5NjQ3Mjg3MTkwMTc4NzY6OTY0NzI4NzE5MDE3ODc2
+2024-09-29 11:46:36,063 - INFO - Merged 289 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 11:46:36,063 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 11:47:36,068 - INFO - Starting periodic merge...
+2024-09-29 11:47:36,129 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 11:47:36,721 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 11:47:36,771 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 11:47:37,264 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 11:47:37,328 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 11:47:37,778 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 11:47:37,836 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 11:47:38,389 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 11:47:38,459 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 11:47:39,007 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 11:47:39,009 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 11:47:39,082 - INFO - Merged 289 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 11:47:39,083 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 11:48:39,084 - INFO - Starting periodic merge...
+2024-09-29 11:48:39,159 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 11:48:40,139 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 11:48:40,208 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 11:48:40,953 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 11:48:41,078 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 11:48:42,285 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 11:48:42,337 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 11:48:43,104 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 11:48:43,172 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 12:00:16,309 - INFO - Starting data collector application
+2024-09-29 12:00:16,309 - INFO - Starting periodic merge...
+2024-09-29 12:00:16,309 - INFO - Periodic merge thread started
+2024-09-29 12:00:16,310 - INFO - Initializing sentiment analysis...
+2024-09-29 12:00:16,310 - INFO - Sentiment analysis initialization thread started
+2024-09-29 12:00:16,392 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 12:00:16,392 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 12:00:16,396 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:00:16,421 - WARNING - Alert triggered for Meta post: https://example.com/post/3467601266135791706
+2024-09-29 12:00:17,057 - INFO - SMS alert sent for Meta post: https://example.com/post/3467601266135791706
+2024-09-29 12:00:17,063 - WARNING - Alert triggered for Meta post: https://example.com/post/UzpfSTEwMDAxMDUxMjc1OTY3MzoxOTI1MTE0NTM3ODQ4OTUzOjE5MjUxMTQ1Mzc4NDg5NTM=
+2024-09-29 12:00:17,394 - INFO - Sentiment analysis initialized.
+2024-09-29 12:00:17,974 - INFO - SMS alert sent for Meta post: https://example.com/post/UzpfSTEwMDAxMDUxMjc1OTY3MzoxOTI1MTE0NTM3ODQ4OTUzOjE5MjUxMTQ1Mzc4NDg5NTM=
+2024-09-29 12:00:18,232 - WARNING - Alert triggered for Meta post: https://example.com/post/UzpfSTEwMDA2NDUxNzMyNzQ2NDo5MTUyMTY4MTA2Mzg4ODg6OTE1MjE2ODEwNjM4ODg4
+2024-09-29 12:00:19,043 - INFO - SMS alert sent for Meta post: https://example.com/post/UzpfSTEwMDA2NDUxNzMyNzQ2NDo5MTUyMTY4MTA2Mzg4ODg6OTE1MjE2ODEwNjM4ODg4
+2024-09-29 12:00:19,183 - WARNING - Alert triggered for Meta post: https://example.com/post/UzpfSTEwMDA0NDI2MTE3Nzc0MjoxMDk3NDk5MTQxNzM1NDQ4OjEwOTc0OTkxNDE3MzU0NDg=
+2024-09-29 12:00:19,606 - INFO - SMS alert sent for Meta post: https://example.com/post/UzpfSTEwMDA0NDI2MTE3Nzc0MjoxMDk3NDk5MTQxNzM1NDQ4OjEwOTc0OTkxNDE3MzU0NDg=
+2024-09-29 12:00:19,663 - WARNING - Alert triggered for Meta post: https://example.com/post/UzpfSTEwMDA1NzIwODE2MTI1OToxMDg2NTE2MTg2NTk4NjQzOjEwODY1MTYxODY1OTg2NDM=
+2024-09-29 12:00:20,079 - INFO - SMS alert sent for Meta post: https://example.com/post/UzpfSTEwMDA1NzIwODE2MTI1OToxMDg2NTE2MTg2NTk4NjQzOjEwODY1MTYxODY1OTg2NDM=
+2024-09-29 12:00:20,272 - WARNING - Alert triggered for Meta post: https://example.com/post/UzpfSTEwMDA5MTMzMTEzODY5OTo0MzA2Nzk5OTk5ODYzNjg6NDMwNjc5OTk5OTg2MzY4
+2024-09-29 12:00:20,739 - INFO - SMS alert sent for Meta post: https://example.com/post/UzpfSTEwMDA5MTMzMTEzODY5OTo0MzA2Nzk5OTk5ODYzNjg6NDMwNjc5OTk5OTg2MzY4
+2024-09-29 12:00:20,833 - WARNING - Alert triggered for Meta post: https://example.com/post/UzpfSTEwMDA5NTQ5NzA1Mzc1NjoxOTEwMTE4MjA3NTg3MTk6MTkxMDExODIwNzU4NzE5
+2024-09-29 12:00:21,262 - INFO - SMS alert sent for Meta post: https://example.com/post/UzpfSTEwMDA5NTQ5NzA1Mzc1NjoxOTEwMTE4MjA3NTg3MTk6MTkxMDExODIwNzU4NzE5
+2024-09-29 12:00:21,410 - WARNING - Alert triggered for Meta post: https://example.com/post/UzpfSTEwMDA2NzQ3NjkwNzkzMDo5MzQ0ODIwOTU0Nzc2Nzk6OTM0NDgyMDk1NDc3Njc5
+2024-09-29 12:00:21,866 - INFO - SMS alert sent for Meta post: https://example.com/post/UzpfSTEwMDA2NzQ3NjkwNzkzMDo5MzQ0ODIwOTU0Nzc2Nzk6OTM0NDgyMDk1NDc3Njc5
+2024-09-29 12:00:22,247 - WARNING - Alert triggered for Meta post: https://example.com/post/UzpfSTEwMDA2NDE0NDAyNTExODo5MTg2NTcyMjAyODI0MDQ6OTE4NjU3MjIwMjgyNDA0
+2024-09-29 12:00:22,647 - INFO - SMS alert sent for Meta post: https://example.com/post/UzpfSTEwMDA2NDE0NDAyNTExODo5MTg2NTcyMjAyODI0MDQ6OTE4NjU3MjIwMjgyNDA0
+2024-09-29 12:00:22,825 - WARNING - Alert triggered for Meta post: https://example.com/post/UzpfSTUwNTEwNzk5NToxMDE2MDI2NjkxMzIwMjk5NjoxMDE2MDI2NjkxMzIwMjk5Ng==
+2024-09-29 12:00:23,298 - INFO - SMS alert sent for Meta post: https://example.com/post/UzpfSTUwNTEwNzk5NToxMDE2MDI2NjkxMzIwMjk5NjoxMDE2MDI2NjkxMzIwMjk5Ng==
+2024-09-29 12:00:23,341 - INFO - Merged 311 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 12:00:23,341 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 12:01:23,342 - INFO - Starting periodic merge...
+2024-09-29 12:19:21,046 - INFO - Starting data collector application
+2024-09-29 12:19:21,047 - INFO - Starting periodic merge...
+2024-09-29 12:19:21,048 - INFO - Periodic merge thread started
+2024-09-29 12:19:21,049 - INFO - Initializing sentiment analysis...
+2024-09-29 12:19:21,049 - INFO - Sentiment analysis initialization thread started
+2024-09-29 12:19:21,109 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:19:21,176 - INFO - Merged 311 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 12:19:21,177 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 12:19:21,183 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 12:19:21,184 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 12:19:22,346 - INFO - Sentiment analysis initialized.
+2024-09-29 12:20:21,179 - INFO - Starting periodic merge...
+2024-09-29 12:20:21,299 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 12:20:22,611 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 12:20:22,660 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 12:20:23,739 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 12:20:23,779 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 12:20:25,034 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 12:20:25,077 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 12:20:26,372 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 12:20:26,435 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 12:20:27,705 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 12:20:27,705 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:20:27,752 - INFO - Merged 311 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 12:20:27,752 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 12:21:27,760 - INFO - Starting periodic merge...
+2024-09-29 12:21:27,803 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 12:21:29,136 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 12:21:29,182 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 12:21:30,702 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 12:21:30,768 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 12:21:31,833 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 12:21:31,877 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 12:21:33,020 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 12:21:33,078 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 12:21:34,349 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 12:21:34,349 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:21:34,395 - INFO - Merged 311 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 12:21:34,395 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 12:22:34,398 - INFO - Starting periodic merge...
+2024-09-29 12:22:34,427 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 12:22:35,759 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 12:22:52,385 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 12:23:10,530 - INFO - Starting data collector application
+2024-09-29 12:23:10,530 - INFO - Starting periodic merge...
+2024-09-29 12:23:10,531 - INFO - Periodic merge thread started
+2024-09-29 12:23:10,531 - INFO - Initializing sentiment analysis...
+2024-09-29 12:23:10,532 - INFO - Sentiment analysis initialization thread started
+2024-09-29 12:23:10,583 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:23:10,623 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 12:23:10,624 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 12:23:11,607 - INFO - Sentiment analysis initialized.
+2024-09-29 12:30:26,447 - INFO - Starting data collector application
+2024-09-29 12:30:26,447 - INFO - Starting periodic merge...
+2024-09-29 12:30:26,447 - INFO - Periodic merge thread started
+2024-09-29 12:30:26,447 - INFO - Initializing sentiment analysis...
+2024-09-29 12:30:26,447 - INFO - Sentiment analysis initialization thread started
+2024-09-29 12:30:26,503 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:30:26,537 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 12:30:26,537 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 12:30:27,659 - INFO - Sentiment analysis initialized.
+2024-09-29 12:33:12,709 - INFO - Starting data collector application
+2024-09-29 12:33:12,709 - INFO - Starting periodic merge...
+2024-09-29 12:33:12,709 - INFO - Periodic merge thread started
+2024-09-29 12:33:12,709 - INFO - Initializing sentiment analysis...
+2024-09-29 12:33:12,709 - INFO - Sentiment analysis initialization thread started
+2024-09-29 12:33:12,778 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:33:12,811 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 12:33:12,811 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 12:33:13,798 - INFO - Sentiment analysis initialized.
+2024-09-29 12:34:06,996 - INFO - Starting data collector application
+2024-09-29 12:34:06,996 - INFO - Starting periodic merge...
+2024-09-29 12:34:06,996 - INFO - Periodic merge thread started
+2024-09-29 12:34:06,996 - INFO - Initializing sentiment analysis...
+2024-09-29 12:34:06,996 - INFO - Sentiment analysis initialization thread started
+2024-09-29 12:34:07,069 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:34:07,080 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 12:34:07,080 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 12:34:08,574 - INFO - Sentiment analysis initialized.
+2024-09-29 12:34:50,330 - INFO - Starting data collector application
+2024-09-29 12:34:50,330 - INFO - Starting periodic merge...
+2024-09-29 12:34:50,330 - INFO - Periodic merge thread started
+2024-09-29 12:34:50,330 - INFO - Initializing sentiment analysis...
+2024-09-29 12:34:50,330 - INFO - Sentiment analysis initialization thread started
+2024-09-29 12:34:50,409 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:34:50,427 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 12:34:50,427 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 12:34:51,786 - INFO - Sentiment analysis initialized.
+2024-09-29 12:36:12,927 - INFO - Starting data collector application
+2024-09-29 12:36:12,930 - INFO - Starting periodic merge...
+2024-09-29 12:36:12,930 - INFO - Periodic merge thread started
+2024-09-29 12:36:12,930 - INFO - Initializing sentiment analysis...
+2024-09-29 12:36:12,930 - INFO - Sentiment analysis initialization thread started
+2024-09-29 12:36:12,988 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:36:13,007 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 12:36:13,007 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 12:36:14,267 - INFO - Sentiment analysis initialized.
+2024-09-29 12:41:01,132 - INFO - Starting data collector application
+2024-09-29 12:41:01,133 - INFO - Starting periodic merge...
+2024-09-29 12:41:01,133 - INFO - Periodic merge thread started
+2024-09-29 12:41:01,134 - INFO - Initializing sentiment analysis...
+2024-09-29 12:41:01,134 - INFO - Sentiment analysis initialization thread started
+2024-09-29 12:41:01,190 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:41:01,238 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 12:41:01,238 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 12:41:02,892 - INFO - Sentiment analysis initialized.
+2024-09-29 12:41:39,872 - INFO - Starting data collector application
+2024-09-29 12:41:39,873 - INFO - Starting periodic merge...
+2024-09-29 12:41:39,873 - INFO - Periodic merge thread started
+2024-09-29 12:41:39,877 - INFO - Initializing sentiment analysis...
+2024-09-29 12:41:39,879 - INFO - Sentiment analysis initialization thread started
+2024-09-29 12:41:39,921 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:41:39,977 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 12:41:39,977 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 12:41:41,086 - INFO - Sentiment analysis initialized.
+2024-09-29 12:51:36,329 - INFO - Starting data collector application
+2024-09-29 12:51:36,330 - INFO - Starting periodic merge...
+2024-09-29 12:51:36,330 - INFO - Periodic merge thread started
+2024-09-29 12:51:36,331 - INFO - Initializing sentiment analysis...
+2024-09-29 12:51:36,332 - INFO - Sentiment analysis initialization thread started
+2024-09-29 12:51:36,375 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:51:36,376 - INFO - Merged 0 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 12:51:36,377 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 12:51:36,390 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 12:51:36,390 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 12:51:38,339 - INFO - Sentiment analysis initialized.
+2024-09-29 12:52:36,378 - INFO - Starting periodic merge...
+2024-09-29 12:52:36,640 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 12:52:38,117 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 12:52:38,170 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 12:52:39,344 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 12:52:39,423 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 12:52:40,650 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 12:52:40,728 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 12:52:41,867 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 12:52:41,967 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 12:52:43,090 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 12:52:43,091 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 12:52:43,092 - INFO - Merged 0 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 12:52:43,092 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 12:53:43,093 - INFO - Starting periodic merge...
+2024-09-29 12:53:43,171 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 12:53:44,390 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 12:53:44,463 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 12:53:45,505 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 12:53:45,536 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 12:53:46,594 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 12:53:46,628 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 12:53:47,701 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 12:53:47,782 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 12:53:48,836 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 12:53:48,843 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 13:01:03,904 - INFO - Starting data collector application
+2024-09-29 13:01:03,904 - INFO - Starting periodic merge...
+2024-09-29 13:01:03,904 - INFO - Periodic merge thread started
+2024-09-29 13:01:03,904 - INFO - Initializing sentiment analysis...
+2024-09-29 13:01:03,904 - INFO - Sentiment analysis initialization thread started
+2024-09-29 13:01:03,953 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 13:01:03,953 - INFO - Merged 0 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 13:01:03,953 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 13:01:03,976 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 13:01:03,976 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 13:01:05,196 - INFO - Sentiment analysis initialized.
+2024-09-29 13:02:03,964 - INFO - Starting periodic merge...
+2024-09-29 13:02:04,067 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:02:05,410 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:02:05,462 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:02:06,599 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:02:06,644 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:02:07,767 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:02:07,807 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:02:08,937 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:02:09,001 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:02:10,170 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:02:10,170 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 13:02:10,170 - INFO - Merged 0 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 13:02:10,182 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 13:03:10,183 - INFO - Starting periodic merge...
+2024-09-29 13:03:10,227 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:03:11,927 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:03:11,973 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:03:13,261 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:03:13,310 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:03:14,544 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:03:14,593 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:03:15,697 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:03:15,756 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:03:17,051 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:03:17,051 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 13:03:17,051 - INFO - Merged 0 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 13:03:17,051 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 13:04:21,323 - INFO - Starting data collector application
+2024-09-29 13:04:21,337 - INFO - Periodic merge thread started
+2024-09-29 13:04:21,337 - INFO - Starting periodic merge...
+2024-09-29 13:04:21,337 - INFO - Initializing sentiment analysis...
+2024-09-29 13:04:21,337 - INFO - Sentiment analysis initialization thread started
+2024-09-29 13:04:21,389 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 13:04:21,389 - INFO - Merged 0 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 13:04:21,389 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 13:04:21,418 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 13:04:21,418 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 13:04:23,360 - INFO - Sentiment analysis initialized.
+2024-09-29 13:05:21,391 - INFO - Starting periodic merge...
+2024-09-29 13:05:21,525 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:05:22,648 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:05:22,695 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:05:23,201 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:05:23,250 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:05:23,693 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:05:23,752 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:05:24,574 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:05:24,619 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:05:25,143 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:05:25,143 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 13:05:25,143 - INFO - Merged 0 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 13:05:25,143 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 13:06:19,636 - INFO - Starting data collector application
+2024-09-29 13:06:19,636 - INFO - Starting periodic merge...
+2024-09-29 13:06:19,636 - INFO - Periodic merge thread started
+2024-09-29 13:06:19,636 - INFO - Initializing sentiment analysis...
+2024-09-29 13:06:19,636 - INFO - Sentiment analysis initialization thread started
+2024-09-29 13:06:19,697 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 13:06:19,697 - INFO - Merged 0 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 13:06:19,697 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 13:06:19,717 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 13:06:19,717 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 13:06:21,481 - INFO - Sentiment analysis initialized.
+2024-09-29 13:07:19,709 - INFO - Starting periodic merge...
+2024-09-29 13:07:19,857 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:07:21,090 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:07:21,164 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:07:22,391 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:07:22,450 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:07:23,538 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:07:23,588 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:07:24,760 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:07:24,819 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:07:25,982 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:07:25,984 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 13:07:25,985 - INFO - Merged 0 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 13:07:25,985 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 13:08:25,986 - INFO - Starting periodic merge...
+2024-09-29 13:08:26,031 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:08:27,424 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:08:27,464 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:08:28,693 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:08:28,741 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:08:29,886 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:08:29,930 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:08:31,209 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:08:31,264 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:08:32,536 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:08:32,536 - INFO - Merged 5 tweets into D:\projects\BACKAPI\twitter.json
+2024-09-29 13:08:32,536 - INFO - Merged 0 meta posts into D:\projects\BACKAPI\meta.json
+2024-09-29 13:08:32,536 - INFO - Periodic merge completed. Waiting for 60 seconds...
+2024-09-29 13:09:32,545 - INFO - Starting periodic merge...
+2024-09-29 13:09:32,574 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:09:33,907 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:29:14,286 - INFO - Initializing sentiment analysis...
+2024-09-29 13:29:14,367 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 13:29:14,367 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 13:29:14,367 - INFO -  * Restarting with stat
+2024-09-29 13:29:15,417 - INFO - Sentiment analysis initialized.
+2024-09-29 13:29:21,602 - INFO - Initializing sentiment analysis...
+2024-09-29 13:29:21,673 - WARNING -  * Debugger is active!
+2024-09-29 13:29:21,677 - INFO -  * Debugger PIN: 369-295-600
+2024-09-29 13:29:22,849 - INFO - Sentiment analysis initialized.
+2024-09-29 13:30:15,540 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:30:15,540 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:30:15,572 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:30:15,572 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:30:15,620 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:30:15,620 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:30:15,658 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:30:15,658 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:30:15,723 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:30:15,723 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:30:23,002 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:30:23,002 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:30:23,033 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:30:23,033 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:30:23,105 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:30:23,105 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:30:23,137 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:30:23,137 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:30:23,169 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:30:23,169 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:31:16,951 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:31:16,952 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:31:16,986 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:31:16,987 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:31:17,026 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:31:17,026 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:31:17,067 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:31:17,067 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:31:17,106 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:31:17,106 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:31:24,558 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:32:18,283 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:37:07,308 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:37:07,311 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567890
+2024-09-29 13:37:07,413 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:37:07,413 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567891
+2024-09-29 13:37:07,485 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:37:07,486 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567892
+2024-09-29 13:37:07,524 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:37:07,524 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567893
+2024-09-29 13:37:07,565 - WARNING - Alert triggered for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:37:07,566 - INFO - SMS alert sent for Twitter post: https://twitter.com/user/status/1234567894
+2024-09-29 13:38:12,620 - INFO - Initializing sentiment analysis...
+2024-09-29 13:38:12,717 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 13:38:12,717 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 13:38:12,717 - INFO -  * Restarting with stat
+2024-09-29 13:38:13,654 - INFO - Sentiment analysis initialized.
+2024-09-29 13:38:20,067 - INFO - Initializing sentiment analysis...
+2024-09-29 13:38:20,145 - WARNING -  * Debugger is active!
+2024-09-29 13:38:20,148 - INFO -  * Debugger PIN: 369-295-600
+2024-09-29 13:38:21,460 - INFO - Sentiment analysis initialized.
+2024-09-29 13:40:36,328 - INFO - Initializing sentiment analysis...
+2024-09-29 13:40:36,405 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 13:40:36,406 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 13:40:36,408 - INFO -  * Restarting with stat
+2024-09-29 13:40:37,429 - INFO - Sentiment analysis initialized.
+2024-09-29 13:40:43,556 - INFO - Initializing sentiment analysis...
+2024-09-29 13:40:43,626 - WARNING -  * Debugger is active!
+2024-09-29 13:40:43,630 - INFO -  * Debugger PIN: 369-295-600
+2024-09-29 13:40:45,674 - INFO - Sentiment analysis initialized.
+2024-09-29 13:44:18,588 - INFO - Initializing sentiment analysis...
+2024-09-29 13:44:18,667 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 13:44:18,667 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 13:44:18,676 - INFO -  * Restarting with stat
+2024-09-29 13:44:19,889 - INFO - Sentiment analysis initialized.
+2024-09-29 13:44:25,894 - INFO - Initializing sentiment analysis...
+2024-09-29 13:44:25,957 - WARNING -  * Debugger is active!
+2024-09-29 13:44:25,957 - INFO -  * Debugger PIN: 369-295-600
+2024-09-29 13:44:27,394 - INFO - Sentiment analysis initialized.
+2024-09-29 13:50:17,686 - INFO -  * Detected change in 'D:\\projects\\BACKAPI\\meta.py', reloading
+2024-09-29 13:50:35,232 - INFO - Starting periodic merge and scrape...
+2024-09-29 13:50:35,232 - INFO - Initializing sentiment analysis...
+2024-09-29 13:53:24,469 - INFO - Starting periodic merge and scrape...
+2024-09-29 13:53:24,475 - INFO - Initializing sentiment analysis...
+2024-09-29 13:55:03,175 - INFO - Starting periodic merge and scrape...
+2024-09-29 13:55:03,176 - INFO - Initializing sentiment analysis...
+2024-09-29 13:55:46,446 - INFO - Starting periodic merge and scrape...
+2024-09-29 13:55:46,448 - INFO - Initializing sentiment analysis...
+2024-09-29 15:44:51,877 - INFO - Starting periodic merge and scrape...
+2024-09-29 15:44:51,879 - INFO - Initializing sentiment analysis...
+2024-09-29 15:51:12,475 - INFO - Starting periodic merge and scrape...
+2024-09-29 15:51:12,475 - INFO - Initializing sentiment analysis...
+2024-09-29 16:01:26,226 - INFO - Starting periodic merge and scrape...
+2024-09-29 16:01:26,226 - INFO - Initializing sentiment analysis...
+2024-09-29 16:01:26,239 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 16:01:26,240 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 16:01:26,241 - INFO -  * Restarting with stat
+2024-09-29 16:01:28,887 - INFO - Starting periodic merge and scrape...
+2024-09-29 16:01:28,887 - INFO - Initializing sentiment analysis...
+2024-09-29 16:01:28,896 - WARNING -  * Debugger is active!
+2024-09-29 16:01:28,899 - INFO -  * Debugger PIN: 369-295-600
+2024-09-29 18:04:48,659 - INFO - Starting periodic merge and scrape...
+2024-09-29 18:04:48,659 - INFO - Initializing sentiment analysis...
+2024-09-29 18:04:48,700 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2024-09-29 18:04:48,700 - INFO - [33mPress CTRL+C to quit[0m
+2024-09-29 18:04:48,705 - INFO -  * Restarting with stat

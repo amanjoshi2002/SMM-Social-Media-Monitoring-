@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origin Track Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="back-arrow" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+    <div class="main-content">
+        <h1>Origin Track Results</h1>
+        <img src="img/1.jpg" alt="Static Photo" id="staticPhoto">
+        <div id="originTrackData">Loading...</div>
+    </div>
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        function goBack() {
+            ipcRenderer.send('navigate-back');
+        }
+
+        async function fetchOriginTrackData() {
+            const response = await fetch('http://localhost:5000/start-identify', {
+                method: 'POST'
+            });
+
+            if (response.ok) {
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let result = '';
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    result += decoder.decode(value);
+                }
+
+                displayOriginTrackData(result);
+            } else {
+                console.error('Error fetching origin track data:', response.statusText);
+            }
+        }
+
+        function displayOriginTrackData(data) {
+            const originTrackData = document.getElementById('originTrackData');
+            originTrackData.innerHTML = `<p>${data}</p>`;
+        }
+
+        // Fetch the origin track data when the page loads
+        window.onload = fetchOriginTrackData;
+    </script>
+</body>
+</html>

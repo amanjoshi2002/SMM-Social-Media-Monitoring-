@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Monitoring</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: brightness(0.7) contrast(1.2);
+            z-index: -2;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            margin: 20px;
+            backdrop-filter: blur(5px);
+            z-index: 1;
+        }
+
+        h1, h2 {
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        input::placeholder {
+            color: #cccccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .social-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: #ffffff;
+        }
+
+        .social-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-option i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .success-message {
+            display: none;
+            font-size: 1.5rem;
+            color: #4CAF50;
+        }
+
+        .logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .logo span {
+            color: #4CAF50;
+        }
+
+        .image-logo {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 100px;
+            z-index: 1000;
+        }
+
+        .image-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .green-check {
+            font-size: 2rem;
+            color: #4CAF50;
+            display: none;
+        }
+
+        .back-arrow {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: #ffffff;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .social-option.selected {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-option .green-check {
+            display: none;
+        }
+
+        .social-option.selected .green-check {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-arrow" id="backArrow" style="display: none;">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+    <div class="logo">Social<span>Scraper</span></div>
+    <div class="image-logo">
+        <img src="./img/logo.png" alt="Logo">
+    </div>
+    <div class="overlay"></div>
+    <div class="container">
+        <div id="login-form" class="fade-in">
+            <h1>Login</h1>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+        </div>
+        <div id="platform-selection" class="fade-in" style="display: none;">
+            <h1>Choose your Platforms</h1>
+            <div class="social-options">
+                <div class="social-option" data-platform="Twitter">
+                    <i class="fab fa-twitter" style="color: #1DA1F2;"></i>
+                    <span>Twitter</span>
+                    <div class="green-check"><i class="fas fa-check-circle"></i></div>
+                </div>
+                <div class="social-option" data-platform="Facebook">
+                    <i class="fab fa-facebook" style="color: #4267B2;"></i>
+                    <span>Facebook</span>
+                    <div class="green-check"><i class="fas fa-check-circle"></i></div>
+                </div>
+                <div class="social-option" data-platform="Instagram">
+                    <i class="fab fa-instagram" style="color: #E1306C;"></i>
+                    <span>Instagram</span>
+                    <div class="green-check"><i class="fas fa-check-circle"></i></div>
+                </div>
+            </div>
+            <button id="nextButton" style="display: none; margin-top: 1rem;">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const dummyCredentials = { username: 'user', password: 'pass' };
+        let selectedPlatforms = [];
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === dummyCredentials.username && password === dummyCredentials.password) {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('platform-selection').style.display = 'block';
+                document.getElementById('backArrow').style.display = 'block';
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const socialOptions = document.querySelectorAll('.social-option');
+            const nextButton = document.getElementById('nextButton');
+            const backArrow = document.getElementById('backArrow');
+
+            socialOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    this.classList.toggle('selected');
+                    const platform = this.getAttribute('data-platform');
+                    
+                    if (this.classList.contains('selected')) {
+                        selectedPlatforms.push(platform);
+                    } else {
+                        selectedPlatforms = selectedPlatforms.filter(p => p !== platform);
+                    }
+
+                    nextButton.style.display = selectedPlatforms.length > 0 ? 'block' : 'none';
+                });
+            });
+
+            nextButton.addEventListener('click', function() {
+                // Prepare the data to send to the backend
+                const data = {
+                    twitter: selectedPlatforms.includes('Twitter'),
+                    meta: selectedPlatforms.includes('Facebook') || selectedPlatforms.includes('Instagram')
+                };
+
+                // Make the API call to the backend
+                fetch('http://localhost:5000/start', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+                .then(response => response.json())
+                .then(result => {
+                    console.log('Success:', result);
+                    // Redirect to the dashboard page after successful API call
+                    window.location.href = `dashboard.html?platforms=${encodeURIComponent(selectedPlatforms.join(','))}`;
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('An error occurred while starting the scraper. Please try again.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
