@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origin Track Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .back-arrow {
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        #staticPhoto, #secondPhoto {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #originTrackData, #topInfluencers, #propagationData {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .loading {
+            text-align: center;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        #topInfluencers ul, #propagationData ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #topInfluencers li, #propagationData li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-arrow" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <h1>Origin Track Results</h1>
+        <img src="img/1.jpg" alt="Static Photo" id="staticPhoto">
+        <div id="originTrackData" class="loading">Loading...</div>
+        <img src="img/2.jpg" alt="Second Photo" id="secondPhoto">
+        <div id="propagationData">
+            <h2>Propagation of Harmful Content</h2>
+            <ul>
+                <li>Post by bondjames with 35 retweets on 2024-09-12 14:15:12.152036</li>
+                <li>Post by kristenbutler with 69 retweets on 2024-05-08 18:58:22.732000</li>
+                <li>Post by qpeters with 29 retweets on 2024-06-26 23:01:55.959655</li>
+                <li>Post by pduncan with 97 retweets on 2024-07-10 09:27:03.016614</li>
+                <li>Post by xshepard with 97 retweets on 2024-03-09 14:01:24.456535</li>
+                <li>Post by nguyenmaria with 77 retweets on 2024-03-29 10:06:37.590380</li>
+                <li>Post by michael12 with 79 retweets on 2024-05-01 06:09:51.580940</li>
+                <li>Post by davidwebb with 29 retweets on 2024-03-21 12:21:59.958287</li>
+                <li>Post by nguyenmaria with 88 retweets on 2024-08-29 03:38:41.825474</li>
+                <li>Post by juliejohnson with 91 retweets on 2024-07-03 14:55:05.032861</li>
+                <!-- Add the rest of the posts here -->
+            </ul>
+        </div>
+        <div id="topInfluencers">
+            <h2>Top Influencers in Harmful Content Network</h2>
+            <ul>
+                <li>allisonheather: 0.08</li>
+                <li>qpeters: 0.07</li>
+                <li>walkeramanda: 0.07</li>
+                <li>pduncan: 0.07</li>
+                <li>juliejohnson: 0.07</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        function goBack() {
+            ipcRenderer.send('navigate-back');
+        }
+
+        async function fetchOriginTrackData() {
+            try {
+                const response = await fetch('http://localhost:5000/start-identify', {
+                    method: 'POST'
+                });
+
+                if (response.ok) {
+                    const reader = response.body.getReader();
+                    const decoder = new TextDecoder();
+                    let result = '';
+
+                    while (true) {
+                        const { done, value } = await reader.read();
+                        if (done) break;
+                        result += decoder.decode(value);
+                    }
+
+                    displayOriginTrackData(result);
+                } else {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+            } catch (error) {
+                console.error('Error fetching origin track data:', error);
+                displayOriginTrackData('Failed to fetch data. Please try again later.');
+            }
+        }
+
+        function displayOriginTrackData(data) {
+            const originTrackData = document.getElementById('originTrackData');
+            originTrackData.classList.remove('loading');
+            originTrackData.innerHTML = `<p>${data}</p>`;
+        }
+
+        // Fetch the origin track data when the page loads
+        window.onload = fetchOriginTrackData;
+    </script>
+</body>
+</html>

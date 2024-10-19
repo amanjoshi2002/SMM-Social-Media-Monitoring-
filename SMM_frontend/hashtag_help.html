@@ -1,0 +1,430 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashtag Help</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        .main-content {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 30px;
+            font-size: 1.5em;
+        }
+        .post {
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+        .post:last-child {
+            border-bottom: none;
+        }
+        .post h4 {
+            margin: 0;
+            color: #333;
+            font-size: 1.2em;
+        }
+        .post p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 1em;
+        }
+        .post img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .post a {
+            color: #1a0dab;
+            text-decoration: none;
+        }
+        .post a:hover {
+            text-decoration: underline;
+        }
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+        .back-arrow i {
+            font-size: 24px;
+            color: #333;
+        }
+        #loadingIndicator {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .no-results {
+            text-align: center;
+            color: #999;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-arrow" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+    <div class="main-content">
+        <h1>Hashtag Help Results</h1>
+        <div id="loadingIndicator" style="display: none;">Loading data...</div>
+        <div id="hashtagHelpResults"></div>
+    </div>
+
+    <script>
+        function goBack() {
+            ipcRenderer.send('navigate-to', 'dashboard.html');
+        }
+
+        function filterByHashtag(data, hashtag) {
+            return data.filter(item => {
+                if (item.hashtags && Array.isArray(item.hashtags)) {
+                    return item.hashtags.some(tag => tag.toLowerCase() === hashtag.toLowerCase());
+                }
+                return false;
+            });
+        }
+
+        function showHashtagHelp() {
+            const resultsContainer = document.getElementById('hashtagHelpResults');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            resultsContainer.style.display = 'none';
+            loadingIndicator.style.display = 'block';
+
+            const twitterUrl = 'http://localhost:5001/twitter_data';
+            const metaUrl = 'http://localhost:5001/meta_data';
+
+            Promise.all([
+                fetch(twitterUrl).then(response => response.json()),
+                fetch(metaUrl).then(response => response.json())
+            ]).then(([twitterData, metaData]) => {
+                const filteredTwitterData = filterByHashtag(twitterData, 'help');
+                const filteredMetaData = filterByHashtag(metaData, 'help');
+
+                resultsContainer.innerHTML = '<h3>Twitter</h3>';
+                if (filteredTwitterData.length === 0) {
+                    resultsContainer.innerHTML += '<p class="no-results">No results found on Twitter.</p>';
+                } else {
+                    filteredTwitterData.forEach(post => {
+                        const postElement = document.createElement('div');
+                        postElement.className = 'post';
+                        postElement.innerHTML = `
+                            <img src="${post.thumbnailUrl}" alt="Post thumbnail">
+                            <div>
+                                <h4>${post.authorMeta.name}</h4>
+                                <p>${post.text}</p>
+                                <p>Likes: ${post.likesCount}</p>
+                                <p>Comments: ${post.commentsCount}</p>
+                                <p><a href="${post.postUrl}" target="_blank">View Post</a></p>
+                            </div>
+                        `;
+                        resultsContainer.appendChild(postElement);
+                    });
+                }
+
+                resultsContainer.innerHTML += '<h3>Meta</h3>';
+                if (filteredMetaData.length === 0) {
+                    resultsContainer.innerHTML += '<p class="no-results">No results found on Meta.</p>';
+                } else {
+                    filteredMetaData.forEach(post => {
+                        const postElement = document.createElement('div');
+                        postElement.className = 'post';
+                        postElement.innerHTML = `
+                            <img src="${post.thumbnailUrl}" alt="Post thumbnail">
+                            <div>
+                                <h4>${post.authorMeta.name}</h4>
+                                <p>${post.text}</p>
+                                <p>Likes: ${post.likesCount}</p>
+                                <p>Comments: ${post.commentsCount}</p>
+                                <p><a href="${post.postUrl}" target="_blank">View Post</a></p>
+                            </div>
+                        `;
+                        resultsContainer.appendChild(postElement);
+                    });
+                }
+
+                loadingIndicator.style.display = 'none';
+                resultsContainer.style.display = 'block';
+            }).catch(error => {
+                console.error('Error:', error);
+                resultsContainer.innerHTML = '<p class="no-results">Error loading data.</p>';
+                loadingIndicator.style.display = 'none';
+                resultsContainer.style.display = 'block';
+            });
+        }
+
+        // Call the function to load the data when the page loads
+        window.onload = showHashtagHelp;
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashtag Help</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        /* Back arrow styling */
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        .back-arrow i {
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Platform buttons container */
+        .platform-selection {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        /* Platform button styles */
+        .platform-option {
+            padding: 5px 10px;
+            margin: 0 8px;
+            font-size: 0.85em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .platform-option.selected {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .platform-option:hover {
+            background-color: #444;
+            color: #fff;
+        }
+
+        /* Post results container */
+        .post {
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .post:last-child {
+            border-bottom: none;
+        }
+
+        .post img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .post h4 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .post p {
+            margin: 5px 0;
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        .post a {
+            color: #1a0dab;
+            text-decoration: none;
+        }
+
+        .post a:hover {
+            text-decoration: underline;
+        }
+
+        /* Loading indicator and no results styling */
+        #loadingIndicator {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        .no-results {
+            text-align: center;
+            color: #999;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-arrow" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+
+    <!-- Container for all content -->
+    <div class="container">
+        <!-- Heading at the top -->
+        <h1>Hashtag Help Results</h1>
+
+        <!-- Platform selection buttons -->
+        <div class="platform-selection">
+            <div class="platform-option" data-platform="Meta" onclick="selectPlatform('Meta')">Meta</div>
+            <div class="platform-option" data-platform="Twitter" onclick="selectPlatform('Twitter')">Twitter</div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" style="display: none;">Loading data...</div>
+
+        <!-- Hashtag Help Results Container -->
+        <div id="hashtagHelpResults"></div>
+    </div>
+
+    <script>
+        let selectedPlatform = '';
+
+        function goBack() {
+            ipcRenderer.send('navigate-to', 'dashboard.html');
+        }
+
+        function filterByHashtag(data, hashtag) {
+            return data.filter(item => {
+                if (item.hashtags && Array.isArray(item.hashtags)) {
+                    return item.hashtags.some(tag => tag.toLowerCase() === hashtag.toLowerCase());
+                }
+                return false;
+            });
+        }
+
+        function selectPlatform(platform) {
+            selectedPlatform = platform;
+            document.querySelectorAll('.platform-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            document.querySelector(`.platform-option[data-platform="${platform}"]`).classList.add('selected');
+            showHashtagHelp();
+        }
+
+        function showHashtagHelp() {
+            const resultsContainer = document.getElementById('hashtagHelpResults');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            resultsContainer.style.display = 'none';
+            loadingIndicator.style.display = 'block';
+
+            const twitterUrl = 'http://localhost:5001/twitter_data';
+            const metaUrl = 'http://localhost:5001/meta_data';
+
+            Promise.all([
+                fetch(twitterUrl).then(response => response.json()),
+                fetch(metaUrl).then(response => response.json())
+            ]).then(([twitterData, metaData]) => {
+                resultsContainer.innerHTML = '';
+                
+                if (selectedPlatform === 'Twitter') {
+                    const filteredTwitterData = filterByHashtag(twitterData, 'help');
+                    renderResults(filteredTwitterData, 'Twitter');
+                } else if (selectedPlatform === 'Meta') {
+                    const filteredMetaData = filterByHashtag(metaData, 'help');
+                    renderResults(filteredMetaData, 'Meta');
+                }
+
+                loadingIndicator.style.display = 'none';
+                resultsContainer.style.display = 'block';
+            }).catch(error => {
+                console.error('Error:', error);
+                resultsContainer.innerHTML = '<p class="no-results">Error loading data.</p>';
+                loadingIndicator.style.display = 'none';
+                resultsContainer.style.display = 'block';
+            });
+        }
+
+        function renderResults(data, platform) {
+            const resultsContainer = document.getElementById('hashtagHelpResults');
+            if (data.length === 0) {
+                resultsContainer.innerHTML = `<p class="no-results">No results found on ${platform}.</p>`;
+            } else {
+                data.forEach(post => {
+                    const postElement = document.createElement('div');
+                    postElement.className = 'post';
+                    postElement.innerHTML = `
+                        <img src="${post.thumbnailUrl}" alt="Post thumbnail">
+                        <div>
+                            <h4>${post.authorMeta.name}</h4>
+                            <p>${post.text}</p>
+                            <p>Likes: ${post.likesCount}</p>
+                            <p>Comments: ${post.commentsCount}</p>
+                            <p><a href="${post.postUrl}" target="_blank">View Post</a></p>
+                        </div>
+                    `;
+                    resultsContainer.appendChild(postElement);
+                });
+            }
+        }
+
+        // Call the function to load the data when the page loads
+        window.onload = () => {
+            selectPlatform('Meta'); // Default platform
+        };
+    </script>
+</body>
+</html>

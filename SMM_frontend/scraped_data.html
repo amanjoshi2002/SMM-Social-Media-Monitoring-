@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraped Data</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="back-arrow" onclick="window.close()">
+        <i class="fas fa-times"></i>
+    </div>
+    <div class="container">
+        <h1 id="pageTitle">Scraped Data</h1>
+        <div id="userInfo"></div>
+        <p id="postCount"></p>
+        <div id="scrapedContent"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrapedData = JSON.parse(localStorage.getItem('scrapedData'));
+            const platform = localStorage.getItem('scrapedPlatform');
+            const username = localStorage.getItem('scrapedUsername');
+
+            document.getElementById('pageTitle').textContent = `${platform.charAt(0).toUpperCase() + platform.slice(1)} Data for @${username}`;
+
+            const userInfoDiv = document.getElementById('userInfo');
+            const contentDiv = document.getElementById('scrapedContent');
+
+            if (scrapedData) {
+                if (platform === 'twitter') {
+                    displayTwitterData(scrapedData);
+                } else if (platform === 'instagram') {
+                    displayInstagramData(scrapedData);
+                } else {
+                    contentDiv.innerHTML = '<p>Unsupported platform.</p>';
+                }
+            } else {
+                contentDiv.innerHTML = '<p>No data available.</p>';
+            }
+        });
+
+        function displayTwitterData(data) {
+            const userInfoDiv = document.getElementById('userInfo');
+            const contentDiv = document.getElementById('scrapedContent');
+            const postCountElem = document.getElementById('postCount');
+
+            // Display user info
+            userInfoDiv.innerHTML = `
+                <p>Followers: ${data.followers_count}</p>
+                <p>Following: ${data.following_count}</p>
+                <p>Tweets: ${data.tweet_count}</p>
+            `;
+
+            postCountElem.textContent = `Number of tweets: ${data.tweets.length}`;
+
+            // Display tweets
+            data.tweets.forEach((tweet, index) => {
+                const tweetElement = document.createElement('div');
+                tweetElement.className = 'post';
+                tweetElement.innerHTML = `
+                    <h3>Tweet ${index + 1}</h3>
+                    <p>${tweet.text}</p>
+                    <p>Likes: ${tweet.likes}</p>
+                    <p>Retweets: ${tweet.retweets}</p>
+                    <p>Comments: ${tweet.comments}</p>
+                    <p>Created: ${new Date(tweet.created_at).toLocaleString()}</p>
+                `;
+                contentDiv.appendChild(tweetElement);
+            });
+        }
+
+        function displayInstagramData(data) {
+            const userInfoDiv = document.getElementById('userInfo');
+            const contentDiv = document.getElementById('scrapedContent');
+            const postCountElem = document.getElementById('postCount');
+
+            // Display user info
+            userInfoDiv.innerHTML = `
+                <p>Followers: ${data.followersCount}</p>
+                <p>Following: ${data.followsCount}</p>
+                <p>Biography: ${data.biography || 'N/A'}</p>
+            `;
+
+            postCountElem.textContent = `Number of posts: ${data.latestPosts.length}`;
+
+            // Display posts
+            data.latestPosts.forEach((post, index) => {
+                const postElement = document.createElement('div');
+                postElement.className = 'post';
+                postElement.innerHTML = `
+                    <h3>Post ${index + 1}</h3>
+                    <p>Type: ${post.type || 'N/A'}</p>
+                    <p>Caption: ${post.caption || 'No caption'}</p>
+                    <p>Likes: ${post.likesCount || 'N/A'}</p>
+                    <p>Comments: ${post.commentsCount || 'N/A'}</p>
+                    <p>Created: ${post.timestamp ? new Date(post.timestamp).toLocaleString() : 'N/A'}</p>
+                    ${post.displayUrl ? `<img src="${post.displayUrl}" alt="${post.alt || ''}" style="max-width: 300px;">` : ''}
+                    ${post.url ? `<a href="${post.url}" target="_blank">View Post</a>` : ''}
+                `;
+
+                if (post.type === 'Sidecar' && post.childPosts && post.childPosts.length > 0) {
+                    const childPostsContainer = document.createElement('div');
+                    childPostsContainer.className = 'child-posts';
+                    childPostsContainer.innerHTML = '<h4>Child Posts</h4>';
+                    post.childPosts.forEach((childPost, childIndex) => {
+                        const childPostElement = document.createElement('div');
+                        childPostElement.className = 'child-post';
+                        childPostElement.innerHTML = `
+                            <h5>Child Post ${childIndex + 1}</h5>
+                            ${childPost.displayUrl ? `<img src="${childPost.displayUrl}" alt="${childPost.alt || ''}" style="max-width: 150px;">` : ''}
+                        `;
+                        childPostsContainer.appendChild(childPostElement);
+                    });
+                    postElement.appendChild(childPostsContainer);
+                }
+
+                contentDiv.appendChild(postElement);
+            });
+        }
+    </script>
+</body>
+</html>
